@@ -35,7 +35,7 @@ app.use(function logger(req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.sendFile(`${__dirname}/views/index.html`);
 });
 
 const PORT = process.env.PORT || 8080;
