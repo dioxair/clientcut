@@ -4,3 +4,9 @@ const preview = document.getElementById("preview");
 const conversionProgess = document.getElementById("conversionProgess");
 const downloadButton = document.getElementById("downloadButton");
 const ffmpeg = createFFmpeg({ log: false });
+
+ffmpeg.setLogger(({ type, message }) => {
+  conversionProgess.style.display = "block";
+  conversionProgess.style.color = "khaki";
+  conversionProgess.textContent = `OUTPUT: ${message}`;
+});
