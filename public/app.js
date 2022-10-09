@@ -45,3 +45,15 @@ const transcode = async ({ target: { files } }) => {
   conversionProgess.textContent = "Conversion is done!";
 };
 file.addEventListener("change", transcode);
+
+function ResizeListener() {
+  if (window.innerWidth < 700) {
+    startPoint.style.width = "80%";
+    endPoint.style.width = "80%";
+  } else {
+    startPoint.style.width = "15%";
+    endPoint.style.width = "15%";
+  }
+}
+
+window.addEventListener("resize", ResizeListener);
