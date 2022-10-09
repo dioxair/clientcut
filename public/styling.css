@@ -8,3 +8,28 @@ body {
 h1 {
   font-size: 45px;
 }
+#fileUpload {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+#fileUploadDiv label {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  text-align: center;
+  background: #202020;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  color: #ffdab9;
+  cursor: pointer;
+  transition: all 500ms;
+}
+#fileUploadDiv label:hover,
+#fileUploadDiv label:focus {
+  transform: translateY(-2px) scale(1.06);
+}
