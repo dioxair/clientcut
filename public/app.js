@@ -46,7 +46,7 @@ const transcode = async ({ target: { files } }) => {
 };
 file.addEventListener("change", transcode);
 
-function ResizeListener() {
+function responsive() {
   if (window.innerWidth < 700) {
     startPoint.style.width = "80%";
     endPoint.style.width = "80%";
@@ -58,6 +58,10 @@ function ResizeListener() {
     preview.width = "450";
     preview.height = "450";
   }
+}
+
+function ResizeListener() {
+  responsive();
 }
 
 window.addEventListener("resize", ResizeListener);
