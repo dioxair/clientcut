@@ -50,9 +50,13 @@ function ResizeListener() {
   if (window.innerWidth < 700) {
     startPoint.style.width = "80%";
     endPoint.style.width = "80%";
+    preview.width = "250";
+    preview.height = "250";
   } else {
     startPoint.style.width = "15%";
     endPoint.style.width = "15%";
+    preview.width = "450";
+    preview.height = "450";
   }
 }
 
