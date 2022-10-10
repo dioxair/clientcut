@@ -1,16 +1,16 @@
 const { createFFmpeg, fetchFile } = FFmpeg;
 const file = document.getElementById("fileUpload");
 const preview = document.getElementById("preview");
-const conversionProgess = document.getElementById("conversionProgess");
+const trimProgress = document.getElementById("trimProgress");
 const downloadButton = document.getElementById("downloadButton");
 const startPoint = document.getElementById("startPoint");
 const endPoint = document.getElementById("endPoint");
 const ffmpeg = createFFmpeg({ log: false });
 
 ffmpeg.setLogger(({ type, message }) => {
-  conversionProgess.style.display = "block";
-  conversionProgess.style.color = "khaki";
-  conversionProgess.textContent = `OUTPUT: ${message}`;
+  trimProgress.style.display = "block";
+  trimProgress.style.color = "khaki";
+  trimProgress.textContent = `OUTPUT: ${message}`;
 });
 
 const transcode = async ({ target: { files } }) => {
@@ -42,7 +42,7 @@ const transcode = async ({ target: { files } }) => {
     str = str.slice(42); // get's the blob name
     saveAs(vidURL, `${str}.mp4`);
   };
-  conversionProgess.textContent = "Conversion is done!";
+  trimProgress.textContent = "Trim is done!";
 };
 file.addEventListener("change", transcode);
 
