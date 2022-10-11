@@ -7,6 +7,8 @@ const startPoint = document.getElementById("startPoint");
 const endPoint = document.getElementById("endPoint");
 const ffmpeg = createFFmpeg({ log: false });
 
+responsive();
+
 ffmpeg.setLogger(({ type, message }) => {
   trimProgress.style.display = "block";
   trimProgress.style.color = "khaki";
